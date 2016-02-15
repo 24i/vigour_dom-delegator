@@ -17,7 +17,7 @@
     "email": "raynos2@gmail.com"
   },
   "dependencies": {
-    "cuid": "^1.2.4",
+    "cuid": "ericelliott/cuid",
     "ev-store": "^7.0.0",
     "global": "^4.2.1",
     "individual": "^2.0.0",
