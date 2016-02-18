@@ -45,6 +45,23 @@ ProxyEvent.prototype.startPropagation = function () {
     this._bubbles = true;
 }
 
+Object.defineProperties(ProxyEvent.prototype, {
+  x: {
+    get: function () {
+        var ev = this._rawEvent
+        var touch = ev.changedTouches
+        return (touch ? touch[0] : ev).clientX
+    }
+  },
+  y: {
+    get: function () {
+        var ev = this._rawEvent
+        var touch = ev.changedTouches
+        return (touch ? touch[0] : ev).clientY
+    }
+  }
+})
+
 function MouseEvent(ev) {
     for (var i = 0; i < ALL_PROPS.length; i++) {
         var propKey = ALL_PROPS[i]
